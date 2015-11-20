@@ -4,15 +4,26 @@ import UIKit
 
 public class NotieView: UIView {
     public var message: String = ""
+    public var withInputField: Bool = false
+    public var placeholder: String = ""
     public var leftButtonTitle: String = "Yes"
     public var rightButtonTitle: String = "No"
 
     public var leftButtonBlock: (() -> ())?
     public var rightButtonBlock: (() -> ())?
 
-    public init(message: String, leftButtonTitle: String?, rightButtonTitle: String?) {
-        super.init(frame: CGRect(x: 0, y: -notieViewHeight, width: screenWidth, height: notieViewHeight))
+    public init(message: String, withInputField: Bool, leftButtonTitle: String?, rightButtonTitle: String?) {
+        let height = withInputField ? notieViewHeight + buttonHeight : notieViewHeight
+        super.init(frame: CGRect(x: 0, y: -notieViewHeight, width: screenWidth, height: height))
+
         self.message = message
+        self.withInputField = withInputField
+
+        self.configureMesasgeView()
+
+        if withInputField == true {
+            self.configureInputField()
+        }
 
         if leftButtonTitle != nil {
             self.leftButtonTitle = leftButtonTitle!
@@ -22,12 +33,11 @@ public class NotieView: UIView {
             self.rightButtonTitle = rightButtonTitle!
         }
 
-        self.configureView()
         self.configureLeftButton(leftButtonTitle)
         self.configureRightButton(rightButtonTitle)
     }
 
-    func configureView() {
+    func configureMesasgeView() {
         self.backgroundColor = UIColor(hexString: "#5887cf")
         let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: screenWidth, height: messageViewHeight))
         messageLabel.centerX = self.centerX
@@ -38,8 +48,16 @@ public class NotieView: UIView {
         self.addSubview(messageLabel)
     }
 
+    func configureInputField() {
+        let inputField = UITextField(frame: CGRect(x: 0, y: messageViewHeight, width: screenWidth, height: buttonHeight))
+        inputField.backgroundColor = UIColor.whiteColor()
+        inputField.placeholder = self.placeholder
+        self.addSubview(inputField)
+    }
+
     func configureLeftButton(title: String?) {
-        let button = UIButton(frame: CGRect(x: 0, y: messageViewHeight, width: screenWidth / 2, height: buttonHeight))
+        let y = self.withInputField ? messageViewHeight + buttonHeight : messageViewHeight
+        let button = UIButton(frame: CGRect(x: 0, y: y, width: screenWidth / 2, height: buttonHeight))
         button.backgroundColor = UIColor(hexString: "#75b760")
         button.setTitle(title, forState: .Normal)
         button.addTarget(self, action: "leftButtonDidTap", forControlEvents: .TouchUpInside)
@@ -47,7 +65,8 @@ public class NotieView: UIView {
     }
 
     func configureRightButton(title: String?) {
-        let button = UIButton(frame: CGRect(x: screenWidth / 2, y: messageViewHeight, width: screenWidth / 2, height: buttonHeight))
+        let y = self.withInputField ? messageViewHeight + buttonHeight : messageViewHeight
+        let button = UIButton(frame: CGRect(x: screenWidth / 2, y: y, width: screenWidth / 2, height: buttonHeight))
         button.backgroundColor = UIColor(hexString: "#d27866")
         button.setTitle(title, forState: .Normal)
         button.addTarget(self, action: "rightButtonDidTap", forControlEvents: .TouchUpInside)
