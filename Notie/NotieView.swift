@@ -3,6 +3,9 @@ import SwiftColors
 import UIKit
 
 public class NotieView: UIView {
+
+    // MARK: Properties
+
     public var message: String = ""
     public var withInputField: Bool = false
     public var placeholder: String?
@@ -11,6 +14,8 @@ public class NotieView: UIView {
 
     public var leftButtonBlock: (() -> ())?
     public var rightButtonBlock: (() -> ())?
+
+    // MARK: Life Cycle
 
     public init(message: String, withInputField: Bool, placeholder: String?, leftButtonTitle: String?, rightButtonTitle: String?) {
         let height = withInputField ? notieViewHeight + buttonHeight : notieViewHeight
@@ -37,6 +42,12 @@ public class NotieView: UIView {
         self.configureLeftButton(leftButtonTitle)
         self.configureRightButton(rightButtonTitle)
     }
+
+    required public init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+    }
+
+    // MARK: Helpers
 
     func configureMesasgeView() {
         self.backgroundColor = UIColor(hexString: "#5887cf")
@@ -75,10 +86,6 @@ public class NotieView: UIView {
         button.setTitle(title, forState: .Normal)
         button.addTarget(self, action: "rightButtonDidTap", forControlEvents: .TouchUpInside)
         self.addSubview(button)
-    }
-
-    required public init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)!
     }
 
     // MARK: Button Handlers
