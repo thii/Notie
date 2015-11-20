@@ -5,6 +5,9 @@ Undistracted in-app notification in Swift, with added buttons and input box.
 
 This library is still work in progress. Do not use it in production, yet.
 
+![Assets/ConfirmNotie.png](Assets/ConfirmNotie.png?raw=1)
+![Assets/InputNotie.png](Assets/InputNotie.png?raw=1)
+
 ## Installation
 
 ### CocoaPods
