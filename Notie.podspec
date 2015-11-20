@@ -4,4 +4,6 @@ Pod::Spec.new do |s|
   s.source_files = "Notie/*.{h,swift}"
   s.requires_arc = true
   s.ios.deployment_target = "8.0"
+  s.dependency "EZSwiftExtensions"
+  s.dependency "SwiftColors"
 end

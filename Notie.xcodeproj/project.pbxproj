@@ -8,12 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		848432741BFEC75700B3E98E /* Notie.h in Headers */ = {isa = PBXBuildFile; fileRef = 848432731BFEC75700B3E98E /* Notie.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8484329A1BFEC91800B3E98E /* NotieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848432991BFEC91800B3E98E /* NotieView.swift */; };
+		8484329C1BFECAFC00B3E98E /* Notie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484329B1BFECAFC00B3E98E /* Notie.swift */; };
+		BA0986A4C5AAB979C2970805 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 417661141B950CA266BEC19A /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1303EC297270006294BFF2DD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		14D7D3568AFFA2FEB72F2911 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		417661141B950CA266BEC19A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		848432701BFEC75700B3E98E /* Notie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Notie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		848432731BFEC75700B3E98E /* Notie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Notie.h; sourceTree = "<group>"; };
 		848432751BFEC75700B3E98E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		848432991BFEC91800B3E98E /* NotieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotieView.swift; sourceTree = "<group>"; };
+		8484329B1BFECAFC00B3E98E /* Notie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -21,17 +29,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA0986A4C5AAB979C2970805 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F8E9EEC08ED3A1F168100B0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				14D7D3568AFFA2FEB72F2911 /* Pods.debug.xcconfig */,
+				1303EC297270006294BFF2DD /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		650082C7832E2545F0887210 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				417661141B950CA266BEC19A /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		848432661BFEC75700B3E98E = {
 			isa = PBXGroup;
 			children = (
 				848432721BFEC75700B3E98E /* Notie */,
 				848432711BFEC75700B3E98E /* Products */,
+				2F8E9EEC08ED3A1F168100B0 /* Pods */,
+				650082C7832E2545F0887210 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -47,6 +75,8 @@
 			isa = PBXGroup;
 			children = (
 				848432731BFEC75700B3E98E /* Notie.h */,
+				848432991BFEC91800B3E98E /* NotieView.swift */,
+				8484329B1BFECAFC00B3E98E /* Notie.swift */,
 				848432751BFEC75700B3E98E /* Info.plist */,
 			);
 			path = Notie;
@@ -70,10 +100,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 848432781BFEC75700B3E98E /* Build configuration list for PBXNativeTarget "Notie" */;
 			buildPhases = (
+				1968AD26D14A395B101B767D /* Check Pods Manifest.lock */,
 				8484326B1BFEC75700B3E98E /* Sources */,
 				8484326C1BFEC75700B3E98E /* Frameworks */,
 				8484326D1BFEC75700B3E98E /* Headers */,
 				8484326E1BFEC75700B3E98E /* Resources */,
+				866B7C7EC1AF451115638CB2 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,11 +156,46 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1968AD26D14A395B101B767D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		866B7C7EC1AF451115638CB2 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8484326B1BFEC75700B3E98E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8484329A1BFEC91800B3E98E /* NotieView.swift in Sources */,
+				8484329C1BFECAFC00B3E98E /* Notie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,7 +293,9 @@
 		};
 		848432791BFEC75700B3E98E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14D7D3568AFFA2FEB72F2911 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -237,12 +306,15 @@
 				PRODUCT_BUNDLE_IDENTIFIER = im.thi.Notie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		8484327A1BFEC75700B3E98E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1303EC297270006294BFF2DD /* Pods.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -275,6 +347,7 @@
 				8484327A1BFEC75700B3E98E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,3 +1,4 @@
+import Notie
 import UIKit
 
 class ViewController: UIViewController {
@@ -12,6 +13,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func showNotie(sender: AnyObject) {
+        let notie = Notie.sharedNotie
+        notie.show(self.view, message: "Are you sure you want to do that?", leftButtonTitle: "Yes", rightButtonTitle: "No")
+    }
 
+    @IBAction func hideNotie(sender: AnyObject) {
+    }
 }
 

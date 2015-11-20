@@ -21,11 +21,17 @@
                                 <rect key="frame" x="129" y="187" width="38" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Show"/>
+                                <connections>
+                                    <action selector="showNotie:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zMl-Wb-eQi"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rB-KU-X0Y">
                                 <rect key="frame" x="132" y="225" width="32" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Hide"/>
+                                <connections>
+                                    <action selector="hideNotie:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AcO-u5-ojj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
