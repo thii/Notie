@@ -2,16 +2,24 @@ import UIKit
 
 public class Notie: NSObject {
     public static let sharedNotie = Notie()
+    public var currentNotieView: NotieView?
 
     public func show(view: UIView, message: String, leftButtonTitle: String?, rightButtonTitle: String?, leftButtonBlock: (() -> ())? = nil, rightButtonBlock: (() -> ())? = nil) {
-        let notieView = NotieView(message: message, leftButtonTitle: leftButtonTitle, rightButtonTitle: rightButtonTitle)
-        notieView.leftButtonBlock = leftButtonBlock
-        notieView.rightButtonBlock = rightButtonBlock
-        view.addSubview(notieView)
+        self.currentNotieView = NotieView(message: message, leftButtonTitle: leftButtonTitle, rightButtonTitle: rightButtonTitle)
+        self.currentNotieView!.leftButtonBlock = leftButtonBlock
+        self.currentNotieView!.rightButtonBlock = rightButtonBlock
+        view.addSubview(self.currentNotieView!)
 
         UIView.animateWithDuration(0.03) { () -> Void in
-            notieView.centerY += 124
+            self.currentNotieView!.centerY += 124
         }
     }
 
+    public func dismiss() {
+        UIView.animateWithDuration(0.03, animations: { () -> Void in
+            self.currentNotieView!.centerY -= 124
+            }) { (dismissed) -> Void in
+                self.currentNotieView?.removeFromSuperview()
+        }
+    }
 }

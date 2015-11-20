@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func hideNotie(sender: AnyObject) {
+        let notie = Notie.sharedNotie
+        notie.dismiss()
     }
 }
-
