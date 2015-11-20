@@ -8,8 +8,8 @@ public class Notie: NSObject {
     public static let sharedNotie = Notie()
     public var currentNotieView: NotieView?
 
-    public func show(view: UIView, message: String, withInputField: Bool, leftButtonTitle: String?, rightButtonTitle: String?, leftButtonBlock: (() -> ())? = nil, rightButtonBlock: (() -> ())? = nil) {
-        self.currentNotieView = NotieView(message: message, withInputField: withInputField, leftButtonTitle: leftButtonTitle, rightButtonTitle: rightButtonTitle)
+    public func show(view: UIView, message: String, withInputField: Bool, placeholder: String?, leftButtonTitle: String?, rightButtonTitle: String?, leftButtonBlock: (() -> ())? = nil, rightButtonBlock: (() -> ())? = nil) {
+        self.currentNotieView = NotieView(message: message, withInputField: withInputField, placeholder: placeholder, leftButtonTitle: leftButtonTitle, rightButtonTitle: rightButtonTitle)
         self.currentNotieView!.leftButtonBlock = leftButtonBlock
         self.currentNotieView!.rightButtonBlock = rightButtonBlock
         view.addSubview(self.currentNotieView!)

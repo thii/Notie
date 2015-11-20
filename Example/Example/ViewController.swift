@@ -15,7 +15,7 @@ class ViewController: UIViewController {
 
     @IBAction func showNotie(sender: AnyObject) {
         let notie = Notie.sharedNotie
-        notie.show(self.view, message: "Are you sure you want to do that?", withInputField: false, leftButtonTitle: "Yes", rightButtonTitle: "No", leftButtonBlock: { () -> () in
+        notie.show(self.view, message: "Are you sure you want to do that?", withInputField: false, placeholder: nil, leftButtonTitle: "Yes", rightButtonTitle: "No", leftButtonBlock: { () -> () in
             print("Left")
             }) { () -> () in
             print("Right")
@@ -24,7 +24,7 @@ class ViewController: UIViewController {
 
     @IBAction func showInputNotie(sender: AnyObject) {
         let notie = Notie.sharedNotie
-        notie.show(self.view, message: "Please enter your email address", withInputField: true, leftButtonTitle: "Submit", rightButtonTitle: "Cancel")
+        notie.show(self.view, message: "Please enter your email address", withInputField: true, placeholder: "email@example.com", leftButtonTitle: "Submit", rightButtonTitle: "Cancel")
     }
 
     @IBAction func hideNotie(sender: AnyObject) {

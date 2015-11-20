@@ -5,19 +5,20 @@ import UIKit
 public class NotieView: UIView {
     public var message: String = ""
     public var withInputField: Bool = false
-    public var placeholder: String = ""
+    public var placeholder: String?
     public var leftButtonTitle: String = "Yes"
     public var rightButtonTitle: String = "No"
 
     public var leftButtonBlock: (() -> ())?
     public var rightButtonBlock: (() -> ())?
 
-    public init(message: String, withInputField: Bool, leftButtonTitle: String?, rightButtonTitle: String?) {
+    public init(message: String, withInputField: Bool, placeholder: String?, leftButtonTitle: String?, rightButtonTitle: String?) {
         let height = withInputField ? notieViewHeight + buttonHeight : notieViewHeight
         super.init(frame: CGRect(x: 0, y: -notieViewHeight, width: screenWidth, height: height))
 
         self.message = message
         self.withInputField = withInputField
+        self.placeholder = placeholder
 
         self.configureMesasgeView()
 
@@ -51,6 +52,8 @@ public class NotieView: UIView {
     func configureInputField() {
         let inputField = UITextField(frame: CGRect(x: 0, y: messageViewHeight, width: screenWidth, height: buttonHeight))
         inputField.backgroundColor = UIColor.whiteColor()
+        inputField.textAlignment = .Center
+        inputField.textColor = UIColor.lightGrayColor()
         inputField.placeholder = self.placeholder
         self.addSubview(inputField)
     }
