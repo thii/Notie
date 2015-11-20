@@ -11,7 +11,7 @@ public class NotieView: UIView {
     public var rightButtonBlock: (() -> ())?
 
     public init(message: String, leftButtonTitle: String?, rightButtonTitle: String?) {
-        super.init(frame: CGRect(x: 0, y: -124, width: screenWidth, height: 124))
+        super.init(frame: CGRect(x: 0, y: -notieViewHeight, width: screenWidth, height: notieViewHeight))
         self.message = message
 
         if leftButtonTitle != nil {
@@ -29,7 +29,7 @@ public class NotieView: UIView {
 
     func configureView() {
         self.backgroundColor = UIColor(hexString: "#5887cf")
-        let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 80))
+        let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: screenWidth, height: messageViewHeight))
         messageLabel.centerX = self.centerX
         messageLabel.centerY = messageLabel.centerY + screenStatusBarHeight / 2
         messageLabel.text = self.message
@@ -39,7 +39,7 @@ public class NotieView: UIView {
     }
 
     func configureLeftButton(title: String?) {
-        let button = UIButton(frame: CGRect(x: 0, y: 80, width: screenWidth / 2, height: 44))
+        let button = UIButton(frame: CGRect(x: 0, y: messageViewHeight, width: screenWidth / 2, height: buttonHeight))
         button.backgroundColor = UIColor(hexString: "#75b760")
         button.setTitle(title, forState: .Normal)
         button.addTarget(self, action: "leftButtonDidTap", forControlEvents: .TouchUpInside)
@@ -47,7 +47,7 @@ public class NotieView: UIView {
     }
 
     func configureRightButton(title: String?) {
-        let button = UIButton(frame: CGRect(x: screenWidth / 2, y: 80, width: screenWidth / 2, height: 44))
+        let button = UIButton(frame: CGRect(x: screenWidth / 2, y: messageViewHeight, width: screenWidth / 2, height: buttonHeight))
         button.backgroundColor = UIColor(hexString: "#d27866")
         button.setTitle(title, forState: .Normal)
         button.addTarget(self, action: "rightButtonDidTap", forControlEvents: .TouchUpInside)

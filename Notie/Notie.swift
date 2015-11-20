@@ -1,5 +1,9 @@
 import UIKit
 
+let messageViewHeight: CGFloat = 80
+let buttonHeight: CGFloat = 44
+let notieViewHeight = messageViewHeight + buttonHeight
+
 public class Notie: NSObject {
     public static let sharedNotie = Notie()
     public var currentNotieView: NotieView?
@@ -11,13 +15,13 @@ public class Notie: NSObject {
         view.addSubview(self.currentNotieView!)
 
         UIView.animateWithDuration(0.03) { () -> Void in
-            self.currentNotieView!.centerY += 124
+            self.currentNotieView!.centerY += notieViewHeight
         }
     }
 
     public func dismiss() {
         UIView.animateWithDuration(0.03, animations: { () -> Void in
-            self.currentNotieView!.centerY -= 124
+            self.currentNotieView!.centerY -= notieViewHeight
             }) { (dismissed) -> Void in
                 self.currentNotieView?.removeFromSuperview()
         }
