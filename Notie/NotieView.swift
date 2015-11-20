@@ -55,6 +55,7 @@ public class NotieView: UIView {
         inputField.textAlignment = .Center
         inputField.textColor = UIColor.lightGrayColor()
         inputField.placeholder = self.placeholder
+        inputField.becomeFirstResponder()
         self.addSubview(inputField)
     }
 
