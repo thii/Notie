@@ -8,7 +8,7 @@ public class NotieView: UIView {
     public var rightButtonTitle: String = "No"
 
     public init(message: String, leftButtonTitle: String?, rightButtonTitle: String?) {
-        super.init(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 124))
+        super.init(frame: CGRect(x: 0, y: -124, width: screenWidth, height: 124))
         self.message = message
 
         if leftButtonTitle != nil {
