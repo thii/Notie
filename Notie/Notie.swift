@@ -14,13 +14,13 @@ public class Notie: NSObject {
         self.currentNotieView!.rightButtonBlock = rightButtonBlock
         view.addSubview(self.currentNotieView!)
 
-        UIView.animateWithDuration(0.03) { () -> Void in
+        UIView.animateWithDuration(0.4) { () -> Void in
             self.currentNotieView!.centerY += notieViewHeight
         }
     }
 
     public func dismiss() {
-        UIView.animateWithDuration(0.03, animations: { () -> Void in
+        UIView.animateWithDuration(0.4, animations: { () -> Void in
             self.currentNotieView!.centerY -= notieViewHeight
             }) { (_) -> Void in
                 self.currentNotieView?.removeFromSuperview()
