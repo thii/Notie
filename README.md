@@ -1,7 +1,9 @@
 Notie
 =====
 
-Undistracted in-app alert in Swift.
+Undistracted in-app notification in Swift, with added buttons and input box.
+
+This library is still work in progress. Do not use it in production, yet.
 
 ## Installation
 
@@ -30,6 +32,7 @@ And add `import Notie` to the top of the files using Notie.
 ### Show alert with confirm buttons
 
 ```swift
+let notie = Notie.sharedNotie
 notie.show(self.view, message: "Are you sure you want to do that?", withInputField: false, placeholder: nil, leftButtonTitle: "Yes", rightButtonTitle: "No", leftButtonBlock: { () -> () in
     // Left button handler
     }) { () -> () in
