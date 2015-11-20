@@ -61,10 +61,14 @@ public class NotieView: UIView {
     // MARK: Button Handlers
 
     func leftButtonDidTap() {
-        print("Left")
+        if self.leftButtonBlock != nil {
+            self.leftButtonBlock!()
+        }
     }
 
     func rightButtonDidTap() {
-        print("Right")
+        if self.rightButtonBlock != nil {
+            self.rightButtonBlock!()
+        }
     }
 }

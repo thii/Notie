@@ -15,7 +15,11 @@ class ViewController: UIViewController {
 
     @IBAction func showNotie(sender: AnyObject) {
         let notie = Notie.sharedNotie
-        notie.show(self.view, message: "Are you sure you want to do that?", leftButtonTitle: "Yes", rightButtonTitle: "No")
+        notie.show(self.view, message: "Are you sure you want to do that?", leftButtonTitle: "Yes", rightButtonTitle: "No", leftButtonBlock: { () -> () in
+            print("Left")
+            }) { () -> () in
+            print("Right")
+        }
     }
 
     @IBAction func hideNotie(sender: AnyObject) {
