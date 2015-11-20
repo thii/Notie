@@ -22,7 +22,7 @@ public class Notie: NSObject {
     public func dismiss() {
         UIView.animateWithDuration(0.03, animations: { () -> Void in
             self.currentNotieView!.centerY -= notieViewHeight
-            }) { (dismissed) -> Void in
+            }) { (_) -> Void in
                 self.currentNotieView?.removeFromSuperview()
         }
     }
