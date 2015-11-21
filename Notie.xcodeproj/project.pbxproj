@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		842BAA391C00792D00D04428 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BAA381C00792D00D04428 /* Helpers.swift */; };
 		848432741BFEC75700B3E98E /* Notie.h in Headers */ = {isa = PBXBuildFile; fileRef = 848432731BFEC75700B3E98E /* Notie.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8484329A1BFEC91800B3E98E /* NotieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848432991BFEC91800B3E98E /* NotieView.swift */; };
 		8484329C1BFECAFC00B3E98E /* Notie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484329B1BFECAFC00B3E98E /* Notie.swift */; };
@@ -17,6 +18,7 @@
 		1303EC297270006294BFF2DD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		14D7D3568AFFA2FEB72F2911 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		417661141B950CA266BEC19A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		842BAA381C00792D00D04428 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		848432701BFEC75700B3E98E /* Notie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Notie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		848432731BFEC75700B3E98E /* Notie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Notie.h; sourceTree = "<group>"; };
 		848432751BFEC75700B3E98E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				848432731BFEC75700B3E98E /* Notie.h */,
 				848432991BFEC91800B3E98E /* NotieView.swift */,
 				8484329B1BFECAFC00B3E98E /* Notie.swift */,
+				842BAA381C00792D00D04428 /* Helpers.swift */,
 				848432751BFEC75700B3E98E /* Info.plist */,
 			);
 			path = Notie;
@@ -195,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8484329A1BFEC91800B3E98E /* NotieView.swift in Sources */,
+				842BAA391C00792D00D04428 /* Helpers.swift in Sources */,
 				8484329C1BFECAFC00B3E98E /* Notie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,9 +1,5 @@
 PODS:
-  - EZSwiftExtensions (0.7)
-  - Notie (0.1.0):
-    - EZSwiftExtensions
-    - SwiftColors
-  - SwiftColors (0.3.1)
+  - Notie (0.1.0)
 
 DEPENDENCIES:
   - Notie (from `..`)
@@ -13,8 +9,6 @@ EXTERNAL SOURCES:
     :path: ".."
 
 SPEC CHECKSUMS:
-  EZSwiftExtensions: cd92500087ce57f4fa55996647690d6ab512b416
-  Notie: 44a67a1eeea559a8d1c2c9ee235eac04cd318791
-  SwiftColors: 61efe0bf991cfed446684e03d1e9f635f1f11a84
+  Notie: 01b8fb1f059afa23d811877d5d1229c6c4450f65
 
 COCOAPODS: 0.39.0
