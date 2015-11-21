@@ -70,8 +70,8 @@ public class Notie : UIView {
     // MARK: Helpers
 
     private func configureMesasgeView() {
-        self.backgroundColor = UIColor(red: 88.0 / 255.0, green: 135.0 / 255.0, blue: 207.0 / 255.0, alpha: 1.0)
         let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: screenWidth, height: messageViewHeight))
+        messageLabel.backgroundColor = UIColor(red: 88.0 / 255.0, green: 135.0 / 255.0, blue: 207.0 / 255.0, alpha: 1.0)
         messageLabel.centerX = self.centerX
         messageLabel.centerY = messageLabel.centerY
         messageLabel.text = self.message
