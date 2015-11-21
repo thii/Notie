@@ -1,5 +1,3 @@
-import EZSwiftExtensions
-import SwiftColors
 import UIKit
 
 public class NotieView: UIView {
@@ -50,7 +48,7 @@ public class NotieView: UIView {
     // MARK: Helpers
 
     func configureMesasgeView() {
-        self.backgroundColor = UIColor(hexString: "#5887cf")
+        self.backgroundColor = UIColor(red: 88.0 / 255.0, green: 135.0 / 255.0, blue: 207.0 / 255.0, alpha: 1.0)
         let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: screenWidth, height: messageViewHeight))
         messageLabel.centerX = self.centerX
         messageLabel.centerY = messageLabel.centerY + screenStatusBarHeight / 2
@@ -73,7 +71,7 @@ public class NotieView: UIView {
     func configureLeftButton(title: String?) {
         let y = self.withInputField ? messageViewHeight + buttonHeight : messageViewHeight
         let button = UIButton(frame: CGRect(x: 0, y: y, width: screenWidth / 2, height: buttonHeight))
-        button.backgroundColor = UIColor(hexString: "#75b760")
+        button.backgroundColor = UIColor(red: 117.0 / 255.0, green: 183.0 / 255.0, blue: 96.0 / 255.0, alpha: 1.0)
         button.setTitle(title, forState: .Normal)
         button.addTarget(self, action: "leftButtonDidTap", forControlEvents: .TouchUpInside)
         self.addSubview(button)
@@ -82,7 +80,7 @@ public class NotieView: UIView {
     func configureRightButton(title: String?) {
         let y = self.withInputField ? messageViewHeight + buttonHeight : messageViewHeight
         let button = UIButton(frame: CGRect(x: screenWidth / 2, y: y, width: screenWidth / 2, height: buttonHeight))
-        button.backgroundColor = UIColor(hexString: "#d27866")
+        button.backgroundColor = UIColor(red: 210.0 / 255.0, green: 120.0 / 255.0, blue: 102.0 / 255.0, alpha: 1.0)
         button.setTitle(title, forState: .Normal)
         button.addTarget(self, action: "rightButtonDidTap", forControlEvents: .TouchUpInside)
         self.addSubview(button)
