@@ -73,7 +73,7 @@ public class Notie : UIView {
         self.backgroundColor = UIColor(red: 88.0 / 255.0, green: 135.0 / 255.0, blue: 207.0 / 255.0, alpha: 1.0)
         let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: screenWidth, height: messageViewHeight))
         messageLabel.centerX = self.centerX
-        messageLabel.centerY = messageLabel.centerY + screenStatusBarHeight / 2
+        messageLabel.centerY = messageLabel.centerY
         messageLabel.text = self.message
         messageLabel.textAlignment = .Center
         messageLabel.textColor = UIColor.whiteColor()
