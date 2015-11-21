@@ -1,5 +1,4 @@
 import EZSwiftExtensions
-import SwiftColors
 import UIKit
 
 public class NotieView: UIView {
