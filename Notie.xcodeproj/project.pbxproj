@@ -8,17 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		842BAA391C00792D00D04428 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BAA381C00792D00D04428 /* Helpers.swift */; };
+		847D74371C00935A0046DF93 /* NotieActionStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D74351C00935A0046DF93 /* NotieActionStyle.swift */; };
+		847D74381C00935A0046DF93 /* NotieStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D74361C00935A0046DF93 /* NotieStyle.swift */; };
 		848432741BFEC75700B3E98E /* Notie.h in Headers */ = {isa = PBXBuildFile; fileRef = 848432731BFEC75700B3E98E /* Notie.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8484329A1BFEC91800B3E98E /* NotieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848432991BFEC91800B3E98E /* NotieView.swift */; };
 		8484329C1BFECAFC00B3E98E /* Notie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484329B1BFECAFC00B3E98E /* Notie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		842BAA381C00792D00D04428 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		847D74351C00935A0046DF93 /* NotieActionStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotieActionStyle.swift; sourceTree = "<group>"; };
+		847D74361C00935A0046DF93 /* NotieStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotieStyle.swift; sourceTree = "<group>"; };
 		848432701BFEC75700B3E98E /* Notie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Notie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		848432731BFEC75700B3E98E /* Notie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Notie.h; sourceTree = "<group>"; };
 		848432751BFEC75700B3E98E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		848432991BFEC91800B3E98E /* NotieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotieView.swift; sourceTree = "<group>"; };
 		8484329B1BFECAFC00B3E98E /* Notie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,11 +54,12 @@
 		848432721BFEC75700B3E98E /* Notie */ = {
 			isa = PBXGroup;
 			children = (
-				842BAA381C00792D00D04428 /* Helpers.swift */,
 				848432751BFEC75700B3E98E /* Info.plist */,
 				848432731BFEC75700B3E98E /* Notie.h */,
 				8484329B1BFECAFC00B3E98E /* Notie.swift */,
-				848432991BFEC91800B3E98E /* NotieView.swift */,
+				847D74351C00935A0046DF93 /* NotieActionStyle.swift */,
+				847D74361C00935A0046DF93 /* NotieStyle.swift */,
+				842BAA381C00792D00D04428 /* Helpers.swift */,
 			);
 			path = Notie;
 			sourceTree = "<group>";
@@ -138,9 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8484329A1BFEC91800B3E98E /* NotieView.swift in Sources */,
 				842BAA391C00792D00D04428 /* Helpers.swift in Sources */,
 				8484329C1BFECAFC00B3E98E /* Notie.swift in Sources */,
+				847D74371C00935A0046DF93 /* NotieActionStyle.swift in Sources */,
+				847D74381C00935A0046DF93 /* NotieStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

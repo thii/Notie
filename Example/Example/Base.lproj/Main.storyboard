@@ -17,14 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rB-KU-X0Y">
-                                <rect key="frame" x="132" y="315" width="32" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Hide"/>
-                                <connections>
-                                    <action selector="hideNotie:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AcO-u5-ojj"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Su6-Oi-TUk">
                                 <rect key="frame" x="131" y="277" width="35" height="30"/>
                                 <animations/>
@@ -47,7 +39,6 @@
                         <constraints>
                             <constraint firstItem="PFf-Be-VCD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8de-9c-Bwk"/>
                             <constraint firstItem="Su6-Oi-TUk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IrG-sG-lyc"/>
-                            <constraint firstItem="4rB-KU-X0Y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xCU-Zz-Rrr"/>
                         </constraints>
                     </view>
                 </viewController>
