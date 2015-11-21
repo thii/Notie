@@ -1,5 +1,7 @@
 import UIKit
 
+public typealias NotieAction = (() -> ())
+
 public class NotieView: UIView {
 
     // MARK: Properties
@@ -10,8 +12,8 @@ public class NotieView: UIView {
     public var leftButtonTitle: String = "Yes"
     public var rightButtonTitle: String = "No"
 
-    public var leftButtonBlock: (() -> ())?
-    public var rightButtonBlock: (() -> ())?
+    public var leftButtonBlock: NotieAction?
+    public var rightButtonBlock: NotieAction?
 
     // MARK: Life Cycle
 
