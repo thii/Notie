@@ -142,6 +142,7 @@ public class Notie : UIStackView {
         self.contentView.addArrangedSubview(messageLabel)
 
         messageLabel.backgroundColor = UIColor(red: 88.0 / 255.0, green: 135.0 / 255.0, blue: 207.0 / 255.0, alpha: 1.0)
+        messageLabel.numberOfLines = 0
         messageLabel.text = self.message
         messageLabel.textAlignment = .Center
         messageLabel.textColor = UIColor.whiteColor()
