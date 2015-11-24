@@ -6,7 +6,7 @@ Notie
 
 Undistracted in-app notification in Swift, with added buttons and input box.
 
-![Assets/NotieScreencast.gif](Assets/NotieScreencast.gif?raw=1)
+![https://raw.githubusercontent.com/thii/Notie/master/Assets/NotieScreencast.gif]()
 
 ## Installation
 
