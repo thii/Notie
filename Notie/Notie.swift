@@ -3,8 +3,6 @@ import UIKit
 @available(iOS 9.0, *)
 public typealias NotieAction = (() -> ())
 
-let notieViewHeight: CGFloat = 124
-
 @available(iOS 9.0, *)
 public class Notie : UIView {
 
