@@ -128,7 +128,9 @@ public class Notie : UIView {
         self.configureMesasgeView()
         self.configureMessageLabelBottomPadding()
         if self.style == .Input {
+            self.addInputFieldPadding()
             self.configureInputField()
+            self.addInputFieldPadding()
         }
         self.configureButtons()
 
@@ -157,6 +159,14 @@ public class Notie : UIView {
         messageLabel.textAlignment = .Center
         messageLabel.textColor = UIColor.whiteColor()
         messageLabel.widthAnchor.constraintEqualToAnchor(self.contentView.widthAnchor).active = true
+    }
+
+    private func addInputFieldPadding() {
+        let padding = UIView()
+        self.contentView.addArrangedSubview(padding)
+        padding.backgroundColor = .whiteColor()
+        padding.heightAnchor.constraintEqualToConstant(5).active = true
+        padding.widthAnchor.constraintEqualToAnchor(self.contentView.widthAnchor).active = true
     }
 
     private func configureInputField() {
