@@ -28,6 +28,22 @@ public class Notie : UIView {
 
     public var animationDuration: NSTimeInterval = 0.4
 
+    public var messageBackgroundColor = UIColor(red: 88.0 / 255.0, green: 135.0 / 255.0, blue: 207.0 / 255.0, alpha: 1.0)
+
+    public var messageTextColor = UIColor.whiteColor()
+
+    public var inputFieldBackgroundColor = UIColor.whiteColor()
+
+    public var inputFieldTextColor = UIColor.darkGrayColor()
+
+    public var leftButtonBackgroundColor = UIColor(red: 117.0 / 255.0, green: 183.0 / 255.0, blue: 96.0 / 255.0, alpha: 1.0)
+
+    public var leftButtonTextColor = UIColor.whiteColor()
+
+    public var rightButtonBackgroundColor = UIColor(red: 210.0 / 255.0, green: 120.0 / 255.0, blue: 102.0 / 255.0, alpha: 1.0)
+
+    public var rightButtonTextColor = UIColor.whiteColor()
+    
     // MARK: Private Properties
 
     private let backgroundView = UIStackView()
@@ -52,7 +68,7 @@ public class Notie : UIView {
         self.style = style
 
         super.init(frame: CGRectZero)
-        self.backgroundColor = UIColor(red: 88.0 / 255.0, green: 135.0 / 255.0, blue: 207.0 / 255.0, alpha: 1.0)
+        self.backgroundColor = self.messageBackgroundColor
         self.translatesAutoresizingMaskIntoConstraints = false
     }
 
@@ -108,7 +124,6 @@ public class Notie : UIView {
         self.backgroundView.bottomAnchor.constraintEqualToAnchor(self.bottomAnchor).active = true
         self.backgroundView.leftAnchor.constraintEqualToAnchor(self.leftAnchor).active = true
         self.backgroundView.rightAnchor.constraintEqualToAnchor(self.rightAnchor).active = true
-        self.backgroundView.backgroundColor = UIColor(red: 88.0 / 255.0, green: 135.0 / 255.0, blue: 207.0 / 255.0, alpha: 1.0)
         self.backgroundView.translatesAutoresizingMaskIntoConstraints = false
         self.backgroundView.alignment = .Top
         self.backgroundView.axis = .Vertical
@@ -154,7 +169,7 @@ public class Notie : UIView {
         messageLabel.numberOfLines = 0
         messageLabel.text = self.message
         messageLabel.textAlignment = .Center
-        messageLabel.textColor = UIColor.whiteColor()
+        messageLabel.textColor = self.messageTextColor
         messageLabel.widthAnchor.constraintEqualToAnchor(self.contentView.widthAnchor).active = true
     }
 
@@ -188,13 +203,15 @@ public class Notie : UIView {
         buttonStack.translatesAutoresizingMaskIntoConstraints = false
 
         let leftButton = UIButton()
-        leftButton.backgroundColor = UIColor(red: 117.0 / 255.0, green: 183.0 / 255.0, blue: 96.0 / 255.0, alpha: 1.0)
+        leftButton.backgroundColor = self.leftButtonBackgroundColor
+        leftButton.setTitleColor(self.leftButtonTextColor, forState: .Normal)
         leftButton.setTitle(self.leftButtonTitle, forState: .Normal)
         leftButton.addTarget(self, action: "leftButtonDidTap", forControlEvents: .TouchUpInside)
         buttonStack.addArrangedSubview(leftButton)
 
         let rightButton = UIButton()
-        rightButton.backgroundColor = UIColor(red: 210.0 / 255.0, green: 120.0 / 255.0, blue: 102.0 / 255.0, alpha: 1.0)
+        rightButton.backgroundColor = self.rightButtonBackgroundColor
+        leftButton.setTitleColor(self.rightButtonTextColor, forState: .Normal)
         rightButton.setTitle(self.rightButtonTitle, forState: .Normal)
         rightButton.addTarget(self, action: "rightButtonDidTap", forControlEvents: .TouchUpInside)
         buttonStack.addArrangedSubview(rightButton)
