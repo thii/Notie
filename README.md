@@ -1,8 +1,10 @@
 Notie
 =====
 
+[![Build Status](https://travis-ci.org/thii/Notie.svg)](https://travis-ci.org/thii/Notie)
 [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/Notie.svg)](https://img.shields.io/cocoapods/v/Notie.svg)
 [![Platform](https://img.shields.io/cocoapods/p/Notie.svg?style=flat)](http://cocoadocs.org/docsets/Notie)
+[![License](https://img.shields.io/cocoapods/l/Notie.svg)](https://raw.githubusercontent.com/thii/Notie/master/LICENSE)
 
 Undistracted in-app notification in Swift, with added buttons and input box.
 
