@@ -87,20 +87,13 @@ public class Notie : UIView {
         self.bottomConstraint = self.bottomAnchor.constraintEqualToAnchor(self.view.topAnchor)
         self.topConstraint?.active = false
         self.bottomConstraint?.active = true
-        forceUpdates()
+        self.forceUpdates()
 
         UIView.animateWithDuration(self.animationDuration) { () -> Void in
             self.bottomConstraint?.active = false
             self.topConstraint?.active = true
             self.forceUpdates()
         }
-    }
-
-    func forceUpdates() {
-        setNeedsLayout()
-        setNeedsUpdateConstraints()
-        layoutIfNeeded()
-        updateConstraintsIfNeeded()
     }
 
     public func dismiss() {
@@ -112,7 +105,17 @@ public class Notie : UIView {
                 self.removeFromSuperview()
         }
     }
-    
+
+
+    // MARK: Helpers
+
+    private func forceUpdates() {
+        setNeedsLayout()
+        setNeedsUpdateConstraints()
+        layoutIfNeeded()
+        updateConstraintsIfNeeded()
+    }
+
 
     // MARK: Configure Subviews
 
