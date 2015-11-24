@@ -55,7 +55,9 @@ public class Notie : UIView {
         self.style = style
 
         super.init(frame: CGRectZero)
-        self.initSubviews()
+        self.backgroundColor = UIColor(red: 88.0 / 255.0, green: 135.0 / 255.0, blue: 207.0 / 255.0, alpha: 1.0)
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.configureBackgroundView()
     }
 
     required public init?(coder aDecoder: NSCoder) {
@@ -73,7 +75,6 @@ public class Notie : UIView {
         self.topConstraint?.active = false
         self.bottomConstraint?.active = true
         forceUpdates()
-
 
         UIView.animateWithDuration(self.animationDuration) { () -> Void in
             self.bottomConstraint?.active = false
@@ -102,24 +103,9 @@ public class Notie : UIView {
 
     // MARK: Configure Subviews
 
-    private func initSubviews() {
-        self.backgroundColor = UIColor(red: 88.0 / 255.0, green: 135.0 / 255.0, blue: 207.0 / 255.0, alpha: 1.0)
-        self.translatesAutoresizingMaskIntoConstraints = false
-
-        self.configureBackgroundView()
+    private func configureBackgroundView() {
         self.configureStatusBarView()
         self.configureContentView()
-        self.configureMesasgeView()
-        self.configureMessageLabelBottomPadding()
-
-        if self.style == .Input {
-            self.configureInputField()
-        }
-
-        self.configureButtons()
-    }
-    
-    private func configureBackgroundView() {
         self.addSubview(self.backgroundView)
         self.backgroundView.topAnchor.constraintEqualToAnchor(self.topAnchor).active = true
         self.backgroundView.bottomAnchor.constraintEqualToAnchor(self.bottomAnchor).active = true
@@ -139,6 +125,13 @@ public class Notie : UIView {
     }
 
     private func configureContentView() {
+        self.configureMesasgeView()
+        self.configureMessageLabelBottomPadding()
+        if self.style == .Input {
+            self.configureInputField()
+        }
+        self.configureButtons()
+
         self.backgroundView.addArrangedSubview(self.contentView)
         self.contentView.widthAnchor.constraintEqualToAnchor(self.backgroundView.widthAnchor).active = true
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
