@@ -167,7 +167,6 @@ public class Notie : UIView {
         inputField.textAlignment = .Center
         inputField.textColor = UIColor.lightGrayColor()
         inputField.placeholder = self.placeholder
-        inputField.becomeFirstResponder()
         inputField.widthAnchor.constraintEqualToAnchor(self.contentView.widthAnchor).active = true
     }
 
