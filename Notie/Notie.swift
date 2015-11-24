@@ -110,6 +110,7 @@ public class Notie : UIView {
         self.configureStatusBarView()
         self.configureContentView()
         self.configureMesasgeView()
+        self.configureMessageLabelBottomPadding()
 
         if self.style == .Input {
             self.configureInputField()
@@ -145,6 +146,13 @@ public class Notie : UIView {
         self.contentView.axis = .Vertical
         self.contentView.distribution = .Fill
         self.contentView.spacing = 0
+    }
+
+    private func configureMessageLabelBottomPadding() {
+        let padding = UIView()
+        self.contentView.addArrangedSubview(padding)
+        padding.heightAnchor.constraintEqualToConstant(5).active = true
+        padding.widthAnchor.constraintEqualToAnchor(self.contentView.widthAnchor).active = true
     }
 
     private func configureMesasgeView() {
