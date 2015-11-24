@@ -10,38 +10,55 @@ public class Notie : UIView {
 
     // MARK: Properties
 
+    /// The view that the notification will be displayed at top of it.
     public var view: UIView
 
+    /// The message of the notification. Default to `nil`
     public var message: String?
 
+    /// The style of the notification. `.Confirm` style includes message view and two confirm buttons. `.Input` style adds an extra input text field. Default to `.Confirm`.
     public var style: NotieStyle = .Confirm
     
+    /// A block to call when the user taps on the left button.
     public var leftButtonAction: NotieAction?
 
+    /// A block to call when the user taps on the right button.
     public var rightButtonAction: NotieAction?
 
+    /// The title of the left button. Default to `OK`.
     public var leftButtonTitle: String = "OK"
 
+    /// The title of the left button. Default to `Cancel`.
     public var rightButtonTitle: String = "Cancel"
 
+    /// The placeholder of the input text field. Default to `nil`.
     public var placeholder: String?
 
+    /// How long the slide down animation should last.
     public var animationDuration: NSTimeInterval = 0.4
 
+    /// The background color of the message view.
     public var messageBackgroundColor = UIColor(red: 88.0 / 255.0, green: 135.0 / 255.0, blue: 207.0 / 255.0, alpha: 1.0)
 
+    /// The text color of the message view. Default to white color.
     public var messageTextColor = UIColor.whiteColor()
 
+    /// The background color of the input text field. Default to white color.
     public var inputFieldBackgroundColor = UIColor.whiteColor()
 
+    /// The text color of the input text field. Default to dark gray.
     public var inputFieldTextColor = UIColor.darkGrayColor()
 
+    /// The background color of the left button.
     public var leftButtonBackgroundColor = UIColor(red: 117.0 / 255.0, green: 183.0 / 255.0, blue: 96.0 / 255.0, alpha: 1.0)
 
+    /// The text color of the left button. Default to white color.
     public var leftButtonTextColor = UIColor.whiteColor()
 
+    /// The background color of the right button.
     public var rightButtonBackgroundColor = UIColor(red: 210.0 / 255.0, green: 120.0 / 255.0, blue: 102.0 / 255.0, alpha: 1.0)
 
+    /// The text color of the right button. Default to white color.
     public var rightButtonTextColor = UIColor.whiteColor()
     
     // MARK: Private Properties
@@ -62,6 +79,11 @@ public class Notie : UIView {
 
     // MARK: Life Cycle
 
+    /// A Notie with the optional `message` and provided `style`, ready to be presented with `show()`.
+    ///
+    /// - parameter view:The view that the notification will be displayed at top of it.
+    /// - parameter message: The message of the notification. Default to `nil`
+    /// - parameter style: The style of the notification. `.Confirm` style includes message view and two confirm buttons. `.Input` style adds an extra input text field. Default to `.Confirm`.
     public init(view: UIView, message: String?, style: NotieStyle) {
         self.view = view
         self.message = message
@@ -79,6 +101,7 @@ public class Notie : UIView {
 
     // MARK: Action
 
+    /// Shows the notification.
     public func show() {
         self.view.addSubview(self)
         self.configureBackgroundView()
@@ -96,6 +119,7 @@ public class Notie : UIView {
         }
     }
 
+    /// Dismisses the notification.
     public func dismiss() {
         UIView.animateWithDuration(self.animationDuration, animations: { () -> Void in
             self.topConstraint?.active = false
