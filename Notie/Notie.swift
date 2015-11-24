@@ -28,6 +28,8 @@ public class Notie : UIView {
 
     public var animationDuration: NSTimeInterval = 0.4
 
+    // MARK: Private Properties
+
     private let backgroundView = UIStackView()
 
     private let statusBarView = UIView()
@@ -52,7 +54,6 @@ public class Notie : UIView {
         super.init(frame: CGRectZero)
         self.backgroundColor = UIColor(red: 88.0 / 255.0, green: 135.0 / 255.0, blue: 207.0 / 255.0, alpha: 1.0)
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.configureBackgroundView()
     }
 
     required public init?(coder aDecoder: NSCoder) {
@@ -64,6 +65,7 @@ public class Notie : UIView {
 
     public func show() {
         self.view.addSubview(self)
+        self.configureBackgroundView()
         self.widthAnchor.constraintEqualToAnchor(self.view.widthAnchor).active = true
         self.topConstraint = self.topAnchor.constraintEqualToAnchor(self.view.topAnchor)
         self.bottomConstraint = self.bottomAnchor.constraintEqualToAnchor(self.view.topAnchor)
