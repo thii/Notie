@@ -6,7 +6,7 @@ public typealias NotieAction = (() -> ())
 let notieViewHeight: CGFloat = 124
 
 @available(iOS 9.0, *)
-public class Notie : UIStackView {
+public class Notie : UIView {
 
     // MARK: Properties
 
@@ -42,6 +42,10 @@ public class Notie : UIStackView {
 
     public let rightButton = UIButton()
 
+    private var topConstraint: NSLayoutConstraint?
+
+    private var bottomConstraint: NSLayoutConstraint?
+
     // MARK: Life Cycle
 
     public init(view: UIView, title: String?, message: String?, style: NotieStyle) {
@@ -64,13 +68,21 @@ public class Notie : UIStackView {
     public func show() {
         self.view.addSubview(self)
         self.widthAnchor.constraintEqualToAnchor(self.view.widthAnchor).active = true
+        self.topConstraint = self.topAnchor.constraintEqualToAnchor(self.view.topAnchor)
+        self.bottomConstraint = self.bottomAnchor.constraintEqualToAnchor(self.view.topAnchor)
+        self.topConstraint?.active = false
+        self.bottomConstraint?.active = true
+        forceUpdates()
+
 
         UIView.animateWithDuration(self.animationDuration) { () -> Void in
-            self.centerY += notieViewHeight
+            self.bottomConstraint?.active = false
+            self.topConstraint?.active = true
+            self.forceUpdates()
         }
     }
 
-    func updates() {
+    func forceUpdates() {
         setNeedsLayout()
         setNeedsUpdateConstraints()
         layoutIfNeeded()
@@ -79,7 +91,9 @@ public class Notie : UIStackView {
 
     public func dismiss() {
         UIView.animateWithDuration(self.animationDuration, animations: { () -> Void in
-            self.centerY -= self.frame.height
+            self.topConstraint?.active = false
+            self.bottomConstraint?.active = true
+            self.forceUpdates()
             }) { (_) -> Void in
                 self.removeFromSuperview()
         }
@@ -89,12 +103,8 @@ public class Notie : UIStackView {
     // MARK: Configure Subviews
 
     private func initSubviews() {
-        // Configure Stack View's Layout
+        self.backgroundColor = UIColor(red: 88.0 / 255.0, green: 135.0 / 255.0, blue: 207.0 / 255.0, alpha: 1.0)
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.alignment = .Top
-        self.axis = .Vertical
-        self.distribution = .FillProportionally
-        self.spacing = 0
 
         self.configureBackgroundView()
         self.configureStatusBarView()
@@ -109,9 +119,12 @@ public class Notie : UIStackView {
     }
     
     private func configureBackgroundView() {
-        self.addArrangedSubview(self.backgroundView)
+        self.addSubview(self.backgroundView)
+        self.backgroundView.topAnchor.constraintEqualToAnchor(self.topAnchor).active = true
+        self.backgroundView.bottomAnchor.constraintEqualToAnchor(self.bottomAnchor).active = true
+        self.backgroundView.leftAnchor.constraintEqualToAnchor(self.leftAnchor).active = true
+        self.backgroundView.rightAnchor.constraintEqualToAnchor(self.rightAnchor).active = true
         self.backgroundView.backgroundColor = UIColor(red: 88.0 / 255.0, green: 135.0 / 255.0, blue: 207.0 / 255.0, alpha: 1.0)
-        self.backgroundView.widthAnchor.constraintEqualToAnchor(self.widthAnchor).active = true
         self.backgroundView.translatesAutoresizingMaskIntoConstraints = false
         self.backgroundView.alignment = .Top
         self.backgroundView.axis = .Vertical
@@ -122,18 +135,15 @@ public class Notie : UIStackView {
     private func configureStatusBarView() {
         self.backgroundView.addArrangedSubview(self.statusBarView)
         self.statusBarView.heightAnchor.constraintEqualToConstant(20).active = true
-        self.statusBarView.backgroundColor = UIColor(red: 88.0 / 255.0, green: 135.0 / 255.0, blue: 207.0 / 255.0, alpha: 1.0)
-        self.statusBarView.widthAnchor.constraintEqualToAnchor(self.backgroundView.widthAnchor).active = true
     }
 
     private func configureContentView() {
         self.backgroundView.addArrangedSubview(self.contentView)
-        self.contentView.backgroundColor = UIColor.clearColor()
         self.contentView.widthAnchor.constraintEqualToAnchor(self.backgroundView.widthAnchor).active = true
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.alignment = .Top
         self.contentView.axis = .Vertical
-        self.contentView.distribution = .FillProportionally
+        self.contentView.distribution = .Fill
         self.contentView.spacing = 0
     }
 
@@ -141,7 +151,6 @@ public class Notie : UIStackView {
         let messageLabel = UILabel()
         self.contentView.addArrangedSubview(messageLabel)
 
-        messageLabel.backgroundColor = UIColor(red: 88.0 / 255.0, green: 135.0 / 255.0, blue: 207.0 / 255.0, alpha: 1.0)
         messageLabel.numberOfLines = 0
         messageLabel.text = self.message
         messageLabel.textAlignment = .Center
