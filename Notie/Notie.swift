@@ -185,7 +185,8 @@ public class Notie : UIView {
         let inputField = UITextField()
         self.contentView.addArrangedSubview(inputField)
 
-        inputField.backgroundColor = UIColor.whiteColor()
+        inputField.backgroundColor = self.inputFieldBackgroundColor
+        inputField.textColor = self.inputFieldTextColor
         inputField.textAlignment = .Center
         inputField.placeholder = self.placeholder
         inputField.widthAnchor.constraintEqualToAnchor(self.contentView.widthAnchor).active = true
