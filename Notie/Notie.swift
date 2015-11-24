@@ -12,8 +12,6 @@ public class Notie : UIView {
 
     public var view: UIView
 
-    public var title: String?
-
     public var message: String?
 
     public var style: NotieStyle = .Confirm
@@ -30,17 +28,15 @@ public class Notie : UIView {
 
     public var animationDuration: NSTimeInterval = 0.4
 
-    public let backgroundView = UIStackView()
+    private let backgroundView = UIStackView()
 
-    public let statusBarView = UIView()
+    private let statusBarView = UIView()
 
-    public let contentView = UIStackView()
+    private let contentView = UIStackView()
 
-    public let buttonsContainerView = UIView()
+    private let leftButton = UIButton()
 
-    public let leftButton = UIButton()
-
-    public let rightButton = UIButton()
+    private let rightButton = UIButton()
 
     private var topConstraint: NSLayoutConstraint?
 
@@ -48,9 +44,8 @@ public class Notie : UIView {
 
     // MARK: Life Cycle
 
-    public init(view: UIView, title: String?, message: String?, style: NotieStyle) {
+    public init(view: UIView, message: String?, style: NotieStyle) {
         self.view = view
-        self.title = title
         self.message = message
         self.style = style
 
