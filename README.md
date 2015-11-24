@@ -30,9 +30,11 @@ $ pod install
 
 And add `import Notie` to the top of the files using Notie.
 
-## Examples
+## Usage
 
-### Show alert with confirm buttons
+### Example
+
+Show a notification with `Confirm` style
 
 ```swift
 let notie = Notie(view: self.view, message: "Are you sure you want to do that?", style: .Confirm)
@@ -50,24 +52,40 @@ notie.rightButtonAction = {
 notie.show()
 ```
 
-### Show alert with input field
+### Parameters
 
-```swift
-let notie = Notie(view: self.view, message: "Please enter your email address", style: .Input)
-notie.placeholder = "email@example.com"
+The following parameters can be modified to customize the appearance of the notification.
 
-notie.leftButtonAction = {
-	// Add your left button action here
-    notie.dismiss()
-}
+- `style`: The style of the notification. `.Confirm` style includes message view and two confirm buttons. `.Input` style adds an extra input text field. Default to `.Confirm`.
 
-notie.rightButtonAction = {
-	// Add your right button action here
-    notie.dismiss()
-}
+- `leftButtonAction`: A block to call when the user taps on the left button.
 
-notie.show()
-```
+- `rightButtonAction`: A block to call when the user taps on the right button.
+
+- `leftButtonTitle`: The title of the left button. Default to `OK`.
+
+- `rightButtonTitle`: The title of the left button. Default to `Cancel`.
+
+- `placeholder`: The placeholder of the input text field. Default to `nil`.
+
+- `animationDuration`: How long the slide down animation should last.
+
+- `messageBackgroundColor`: The background color of the message view.
+
+- `messageTextColor`: The text color of the message view. Default to white color.
+
+- `inputFieldBackgroundColor`: The background color of the input text field. Default to white color.
+
+- `inputFieldTextColor`: The text color of the input text field. Default to dark gray.
+
+- `leftButtonBackgroundColor`: The background color of the left button.
+
+- `leftButtonTextColor`: The text color of the left button. Default to white color.
+
+- `rightButtonBackgroundColor`: The background color of the right button.
+
+- `rightButtonTextColor`: The text color of the right button. Default to white color.
+
 
 ## Requirements
 

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Notie"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "Undistracted in-app notification in Swift, with added buttons and input box."
   s.homepage     = "https://github.com/thii/Notie"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
