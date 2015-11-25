@@ -1,8 +1,10 @@
 import UIKit
 
+/// A closure of action to be handled when the user tap one of the buttons.
 @available(iOS 9.0, *)
 public typealias NotieAction = (() -> ())
 
+/// Notie is a dropdown notification view that presents above the main view controller.
 @available(iOS 9.0, *)
 public class Notie : UIView {
 
@@ -79,7 +81,7 @@ public class Notie : UIView {
 
     /// A Notie with the optional `message` and provided `style`, ready to be presented with `show()`.
     ///
-    /// - parameter view:The view that the notification will be displayed at top of it.
+    /// - parameter view: The view that the notification will be displayed on top of it.
     /// - parameter message: The message of the notification. Default to `nil`
     /// - parameter style: The style of the notification. `.Confirm` style includes message view and two confirm buttons. `.Input` style adds an extra input text field. Default to `.Confirm`.
     public init(view: UIView, message: String?, style: NotieStyle) {
