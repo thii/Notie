@@ -3,6 +3,7 @@ Notie
 
 [![Build Status](https://travis-ci.org/thii/Notie.svg)](https://travis-ci.org/thii/Notie)
 [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/Notie.svg)](https://img.shields.io/cocoapods/v/Notie.svg)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Platform](https://img.shields.io/cocoapods/p/Notie.svg?style=flat)](http://cocoadocs.org/docsets/Notie)
 [![License](https://img.shields.io/cocoapods/l/Notie.svg)](https://raw.githubusercontent.com/thii/Notie/master/LICENSE)
 
@@ -31,6 +32,25 @@ $ pod install
 ```
 
 And add `import Notie` to the top of the files using Notie.
+
+### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate Notie into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ogdl
+github "thii/Notie"
+```
+
+Run `carthage` to build the framework and drag the built `Notie.framework` into your Xcode project.
 
 ## Usage
 
