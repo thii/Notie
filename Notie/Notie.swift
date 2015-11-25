@@ -201,7 +201,7 @@ public class Notie : UIView {
     private func addInputFieldPadding() {
         let padding = UIView()
         self.contentView.addArrangedSubview(padding)
-        padding.backgroundColor = .whiteColor()
+        padding.backgroundColor = self.inputFieldBackgroundColor
         padding.heightAnchor.constraintEqualToConstant(5).active = true
         padding.widthAnchor.constraintEqualToAnchor(self.contentView.widthAnchor).active = true
     }
