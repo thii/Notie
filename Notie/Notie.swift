@@ -92,7 +92,7 @@ public class Notie : UIView {
         super.init(frame: CGRectZero)
     }
 
-    /// This is required for a subclass of NSCoding. Just don't care about it.
+    /// This is required for classes conform to NSCoding protocol. Just don't care about it.
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
