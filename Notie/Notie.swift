@@ -2,7 +2,7 @@ import UIKit
 
 /// A closure of action to be handled when the user tap one of the buttons.
 @available(iOS 9.0, *)
-public typealias NotieAction = (() -> ())
+public typealias NotieAction = Void -> Void
 
 /// Notie is a dropdown notification view that presents above the main view controller.
 @available(iOS 9.0, *)
