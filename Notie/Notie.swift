@@ -251,14 +251,12 @@ public class Notie : UIView {
     // MARK: Button Handlers
 
     func leftButtonDidTap() {
-        if self.leftButtonAction != nil {
-            self.leftButtonAction!()
-        }
+        guard let action = self.leftButtonAction else { return }
+        action()
     }
 
     func rightButtonDidTap() {
-        if self.rightButtonAction != nil {
-            self.rightButtonAction!()
-        }
+        guard let action = self.rightButtonAction else { return }
+        action()
     }
 }
