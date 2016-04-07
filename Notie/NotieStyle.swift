@@ -9,4 +9,5 @@ public enum NotieStyle : Int {
 
     /// The notification will include a message view, an input text field and two confirm buttons.
     case Input
+
 }
