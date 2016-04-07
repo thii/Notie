@@ -61,7 +61,14 @@ public class Notie : UIView {
     /// The text color of the right button. Default to white color.
     public var rightButtonTextColor = UIColor.whiteColor()
     
+    public enum buttons: Int{
+        case standard = 2
+        case single = 1
+    }
+
+    public var buttonCount: buttons? = buttons.standard
     // MARK: Private Properties
+
 
     private let backgroundView = UIStackView()
 
@@ -76,6 +83,8 @@ public class Notie : UIView {
     private var topConstraint: NSLayoutConstraint?
 
     private var bottomConstraint: NSLayoutConstraint?
+
+    private var inputField: UITextField?
 
     // MARK: Life Cycle
 
@@ -98,6 +107,16 @@ public class Notie : UIView {
     }
 
 
+    public func getText() -> String{
+        if self.style == .Input {
+            if inputField != nil {
+                return (inputField?.text)!
+            }
+        }else{
+            return ""
+        }
+        return ""
+    }
     // MARK: Action
 
     /// Shows the notification.
@@ -213,7 +232,7 @@ public class Notie : UIView {
     private func configureInputField() {
         let inputField = UITextField()
         self.contentView.addArrangedSubview(inputField)
-
+        self.inputField = inputField
         inputField.backgroundColor = self.inputFieldBackgroundColor
         inputField.textColor = self.inputFieldTextColor
         inputField.textAlignment = .Center
@@ -236,15 +255,18 @@ public class Notie : UIView {
         leftButton.backgroundColor = self.leftButtonBackgroundColor
         leftButton.setTitleColor(self.leftButtonTextColor, forState: .Normal)
         leftButton.setTitle(self.leftButtonTitle, forState: .Normal)
-        leftButton.addTarget(self, action: "leftButtonDidTap", forControlEvents: .TouchUpInside)
+        leftButton.addTarget(self, action: #selector(Notie.leftButtonDidTap), forControlEvents: .TouchUpInside)
         buttonStack.addArrangedSubview(leftButton)
 
         let rightButton = UIButton()
         rightButton.backgroundColor = self.rightButtonBackgroundColor
         leftButton.setTitleColor(self.rightButtonTextColor, forState: .Normal)
         rightButton.setTitle(self.rightButtonTitle, forState: .Normal)
-        rightButton.addTarget(self, action: "rightButtonDidTap", forControlEvents: .TouchUpInside)
-        buttonStack.addArrangedSubview(rightButton)
+        rightButton.addTarget(self, action: #selector(Notie.rightButtonDidTap), forControlEvents: .TouchUpInside)
+        if self.buttonCount != buttons.single {
+             buttonStack.addArrangedSubview(rightButton)
+        }
+
     }
 
 
