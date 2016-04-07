@@ -10,31 +10,7 @@
 		847D74381C00935A0046DF93 /* NotieStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D74361C00935A0046DF93 /* NotieStyle.swift */; };
 		848432741BFEC75700B3E98E /* Notie.h in Headers */ = {isa = PBXBuildFile; fileRef = 848432731BFEC75700B3E98E /* Notie.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8484329C1BFECAFC00B3E98E /* Notie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484329B1BFECAFC00B3E98E /* Notie.swift */; };
-		8A29CAEB1CB6BFBF00F6E6BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A29CAEA1CB6BFBF00F6E6BD /* AppDelegate.swift */; };
-		8A29CAED1CB6BFBF00F6E6BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A29CAEC1CB6BFBF00F6E6BD /* ViewController.swift */; };
-		8A29CAF01CB6BFBF00F6E6BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A29CAEE1CB6BFBF00F6E6BD /* Main.storyboard */; };
-		8A29CAF21CB6BFBF00F6E6BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A29CAF11CB6BFBF00F6E6BD /* Assets.xcassets */; };
-		8A29CAF51CB6BFBF00F6E6BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A29CAF31CB6BFBF00F6E6BD /* LaunchScreen.storyboard */; };
-		8A29CB001CB6BFBF00F6E6BD /* NotieDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A29CAFF1CB6BFBF00F6E6BD /* NotieDemoTests.swift */; };
-		8A29CB0B1CB6BFBF00F6E6BD /* NotieDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A29CB0A1CB6BFBF00F6E6BD /* NotieDemoUITests.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		8A29CAFC1CB6BFBF00F6E6BD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 848432671BFEC75700B3E98E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8A29CAE71CB6BFBE00F6E6BD;
-			remoteInfo = NotieDemo;
-		};
-		8A29CB071CB6BFBF00F6E6BD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 848432671BFEC75700B3E98E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8A29CAE71CB6BFBE00F6E6BD;
-			remoteInfo = NotieDemo;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		847D74361C00935A0046DF93 /* NotieStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotieStyle.swift; sourceTree = "<group>"; };
@@ -42,44 +18,10 @@
 		848432731BFEC75700B3E98E /* Notie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Notie.h; sourceTree = "<group>"; };
 		848432751BFEC75700B3E98E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8484329B1BFECAFC00B3E98E /* Notie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notie.swift; sourceTree = "<group>"; };
-		8A29CAE81CB6BFBE00F6E6BD /* NotieDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotieDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A29CAEA1CB6BFBF00F6E6BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8A29CAEC1CB6BFBF00F6E6BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8A29CAEF1CB6BFBF00F6E6BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8A29CAF11CB6BFBF00F6E6BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8A29CAF41CB6BFBF00F6E6BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8A29CAF61CB6BFBF00F6E6BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8A29CAFB1CB6BFBF00F6E6BD /* NotieDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotieDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A29CAFF1CB6BFBF00F6E6BD /* NotieDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotieDemoTests.swift; sourceTree = "<group>"; };
-		8A29CB011CB6BFBF00F6E6BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8A29CB061CB6BFBF00F6E6BD /* NotieDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotieDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A29CB0A1CB6BFBF00F6E6BD /* NotieDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotieDemoUITests.swift; sourceTree = "<group>"; };
-		8A29CB0C1CB6BFBF00F6E6BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		8484326C1BFEC75700B3E98E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8A29CAE51CB6BFBE00F6E6BD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8A29CAF81CB6BFBF00F6E6BD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8A29CB031CB6BFBF00F6E6BD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -93,9 +35,6 @@
 			isa = PBXGroup;
 			children = (
 				848432721BFEC75700B3E98E /* Notie */,
-				8A29CAE91CB6BFBE00F6E6BD /* NotieDemo */,
-				8A29CAFE1CB6BFBF00F6E6BD /* NotieDemoTests */,
-				8A29CB091CB6BFBF00F6E6BD /* NotieDemoUITests */,
 				848432711BFEC75700B3E98E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -104,9 +43,6 @@
 			isa = PBXGroup;
 			children = (
 				848432701BFEC75700B3E98E /* Notie.framework */,
-				8A29CAE81CB6BFBE00F6E6BD /* NotieDemo.app */,
-				8A29CAFB1CB6BFBF00F6E6BD /* NotieDemoTests.xctest */,
-				8A29CB061CB6BFBF00F6E6BD /* NotieDemoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,37 +56,6 @@
 				847D74361C00935A0046DF93 /* NotieStyle.swift */,
 			);
 			path = Notie;
-			sourceTree = "<group>";
-		};
-		8A29CAE91CB6BFBE00F6E6BD /* NotieDemo */ = {
-			isa = PBXGroup;
-			children = (
-				8A29CAEA1CB6BFBF00F6E6BD /* AppDelegate.swift */,
-				8A29CAEC1CB6BFBF00F6E6BD /* ViewController.swift */,
-				8A29CAEE1CB6BFBF00F6E6BD /* Main.storyboard */,
-				8A29CAF11CB6BFBF00F6E6BD /* Assets.xcassets */,
-				8A29CAF31CB6BFBF00F6E6BD /* LaunchScreen.storyboard */,
-				8A29CAF61CB6BFBF00F6E6BD /* Info.plist */,
-			);
-			path = NotieDemo;
-			sourceTree = "<group>";
-		};
-		8A29CAFE1CB6BFBF00F6E6BD /* NotieDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				8A29CAFF1CB6BFBF00F6E6BD /* NotieDemoTests.swift */,
-				8A29CB011CB6BFBF00F6E6BD /* Info.plist */,
-			);
-			path = NotieDemoTests;
-			sourceTree = "<group>";
-		};
-		8A29CB091CB6BFBF00F6E6BD /* NotieDemoUITests */ = {
-			isa = PBXGroup;
-			children = (
-				8A29CB0A1CB6BFBF00F6E6BD /* NotieDemoUITests.swift */,
-				8A29CB0C1CB6BFBF00F6E6BD /* Info.plist */,
-			);
-			path = NotieDemoUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,59 +90,6 @@
 			productReference = 848432701BFEC75700B3E98E /* Notie.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		8A29CAE71CB6BFBE00F6E6BD /* NotieDemo */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8A29CB101CB6BFBF00F6E6BD /* Build configuration list for PBXNativeTarget "NotieDemo" */;
-			buildPhases = (
-				8A29CAE41CB6BFBE00F6E6BD /* Sources */,
-				8A29CAE51CB6BFBE00F6E6BD /* Frameworks */,
-				8A29CAE61CB6BFBE00F6E6BD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = NotieDemo;
-			productName = NotieDemo;
-			productReference = 8A29CAE81CB6BFBE00F6E6BD /* NotieDemo.app */;
-			productType = "com.apple.product-type.application";
-		};
-		8A29CAFA1CB6BFBF00F6E6BD /* NotieDemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8A29CB111CB6BFBF00F6E6BD /* Build configuration list for PBXNativeTarget "NotieDemoTests" */;
-			buildPhases = (
-				8A29CAF71CB6BFBF00F6E6BD /* Sources */,
-				8A29CAF81CB6BFBF00F6E6BD /* Frameworks */,
-				8A29CAF91CB6BFBF00F6E6BD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8A29CAFD1CB6BFBF00F6E6BD /* PBXTargetDependency */,
-			);
-			name = NotieDemoTests;
-			productName = NotieDemoTests;
-			productReference = 8A29CAFB1CB6BFBF00F6E6BD /* NotieDemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		8A29CB051CB6BFBF00F6E6BD /* NotieDemoUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8A29CB121CB6BFBF00F6E6BD /* Build configuration list for PBXNativeTarget "NotieDemoUITests" */;
-			buildPhases = (
-				8A29CB021CB6BFBF00F6E6BD /* Sources */,
-				8A29CB031CB6BFBF00F6E6BD /* Frameworks */,
-				8A29CB041CB6BFBF00F6E6BD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8A29CB081CB6BFBF00F6E6BD /* PBXTargetDependency */,
-			);
-			name = NotieDemoUITests;
-			productName = NotieDemoUITests;
-			productReference = 8A29CB061CB6BFBF00F6E6BD /* NotieDemoUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -249,17 +101,6 @@
 				TargetAttributes = {
 					8484326F1BFEC75700B3E98E = {
 						CreatedOnToolsVersion = 7.1.1;
-					};
-					8A29CAE71CB6BFBE00F6E6BD = {
-						CreatedOnToolsVersion = 7.3;
-					};
-					8A29CAFA1CB6BFBF00F6E6BD = {
-						CreatedOnToolsVersion = 7.3;
-						TestTargetID = 8A29CAE71CB6BFBE00F6E6BD;
-					};
-					8A29CB051CB6BFBF00F6E6BD = {
-						CreatedOnToolsVersion = 7.3;
-						TestTargetID = 8A29CAE71CB6BFBE00F6E6BD;
 					};
 				};
 			};
@@ -277,39 +118,12 @@
 			projectRoot = "";
 			targets = (
 				8484326F1BFEC75700B3E98E /* Notie */,
-				8A29CAE71CB6BFBE00F6E6BD /* NotieDemo */,
-				8A29CAFA1CB6BFBF00F6E6BD /* NotieDemoTests */,
-				8A29CB051CB6BFBF00F6E6BD /* NotieDemoUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8484326E1BFEC75700B3E98E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8A29CAE61CB6BFBE00F6E6BD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8A29CAF51CB6BFBF00F6E6BD /* LaunchScreen.storyboard in Resources */,
-				8A29CAF21CB6BFBF00F6E6BD /* Assets.xcassets in Resources */,
-				8A29CAF01CB6BFBF00F6E6BD /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8A29CAF91CB6BFBF00F6E6BD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8A29CB041CB6BFBF00F6E6BD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -328,64 +142,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8A29CAE41CB6BFBE00F6E6BD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8A29CAED1CB6BFBF00F6E6BD /* ViewController.swift in Sources */,
-				8A29CAEB1CB6BFBF00F6E6BD /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8A29CAF71CB6BFBF00F6E6BD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8A29CB001CB6BFBF00F6E6BD /* NotieDemoTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8A29CB021CB6BFBF00F6E6BD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8A29CB0B1CB6BFBF00F6E6BD /* NotieDemoUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		8A29CAFD1CB6BFBF00F6E6BD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8A29CAE71CB6BFBE00F6E6BD /* NotieDemo */;
-			targetProxy = 8A29CAFC1CB6BFBF00F6E6BD /* PBXContainerItemProxy */;
-		};
-		8A29CB081CB6BFBF00F6E6BD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8A29CAE71CB6BFBE00F6E6BD /* NotieDemo */;
-			targetProxy = 8A29CB071CB6BFBF00F6E6BD /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		8A29CAEE1CB6BFBF00F6E6BD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8A29CAEF1CB6BFBF00F6E6BD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		8A29CAF31CB6BFBF00F6E6BD /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8A29CAF41CB6BFBF00F6E6BD /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		848432771BFEC75700B3E98E /* Release */ = {
@@ -446,46 +203,6 @@
 			};
 			name = Release;
 		};
-		8A29CB0D1CB6BFBF00F6E6BD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ANALYZER_NONNULL = YES;
-				INFOPLIST_FILE = NotieDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bittank.NotieDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		8A29CB0E1CB6BFBF00F6E6BD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NONNULL = YES;
-				INFOPLIST_FILE = NotieDemoTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bittank.NotieDemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NotieDemo.app/NotieDemo";
-			};
-			name = Release;
-		};
-		8A29CB0F1CB6BFBF00F6E6BD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NONNULL = YES;
-				INFOPLIST_FILE = NotieDemoUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bittank.NotieDemoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = NotieDemo;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -504,27 +221,6 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
-		};
-		8A29CB101CB6BFBF00F6E6BD /* Build configuration list for PBXNativeTarget "NotieDemo" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8A29CB0D1CB6BFBF00F6E6BD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		8A29CB111CB6BFBF00F6E6BD /* Build configuration list for PBXNativeTarget "NotieDemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8A29CB0E1CB6BFBF00F6E6BD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		8A29CB121CB6BFBF00F6E6BD /* Build configuration list for PBXNativeTarget "NotieDemoUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8A29CB0F1CB6BFBF00F6E6BD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
