@@ -96,6 +96,7 @@
 		848432671BFEC75700B3E98E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0710;
 				TargetAttributes = {
 					8484326F1BFEC75700B3E98E = {
@@ -109,6 +110,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 848432661BFEC75700B3E98E;
 			productRefGroup = 848432711BFEC75700B3E98E /* Products */;
