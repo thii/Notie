@@ -16,11 +16,14 @@ class ViewController: UIViewController {
     @IBAction func showNotie(sender: AnyObject) {
         let notie = Notie(view: self.view, message: "Are you sure you want to do that?", style: .Confirm)
 
+
+
         notie.leftButtonAction = {
             notie.dismiss()
         }
 
         notie.rightButtonAction = {
+
             notie.dismiss()
         }
 
@@ -30,8 +33,9 @@ class ViewController: UIViewController {
     @IBAction func showInputNotie(sender: AnyObject) {
         let notie = Notie(view: self.view, message: "Please enter your email address", style: .Input)
         notie.placeholder = "email@example.com"
-
+        notie.buttonCount = Notie.buttons.standard
         notie.leftButtonAction = {
+            print(notie.getText())
             notie.dismiss()
         }
 
