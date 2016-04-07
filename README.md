@@ -74,6 +74,22 @@ notie.rightButtonAction = {
 
 notie.show()
 ```
+Or, if you want just a standard notification
+
+```swift
+	let notie = Notie(view: self.view, message: "This is a notification!", style: .Confirm)
+
+
+    notie.buttonCount = Notie.buttons.standard
+
+    notie.leftButtonAction = {
+            notie.dismiss()
+     }
+
+
+     notie.show()
+
+```
 
 ### Parameters
 
@@ -108,6 +124,10 @@ The following parameters can be modified to customize the appearance of the noti
 - `rightButtonBackgroundColor`: The background color of the right button.
 
 - `rightButtonTextColor`: The text color of the right button. Default to white color.
+- `buttonCount`: The button configuration, defaults to `Notie.buttonCount.standard` (two buttons). When the value is set to `Notie.buttonCount.single`, the action defaults to the left button.
+
+## Functions
+- `getText()` returns a String value of the text when using a `.Input` style
 
 
 ## Requirements

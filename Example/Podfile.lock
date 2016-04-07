@@ -1,14 +1,14 @@
 PODS:
-  - Notie (0.1.0)
+  - Notie (1.0.4)
 
 DEPENDENCIES:
   - Notie (from `..`)
 
 EXTERNAL SOURCES:
   Notie:
-    :path: ".."
+    :path: ..
 
 SPEC CHECKSUMS:
-  Notie: 01b8fb1f059afa23d811877d5d1229c6c4450f65
+  Notie: 1acc7a2dd65b7ddbecd0d7bff0f71ef83df11caf
 
 COCOAPODS: 0.39.0
