@@ -15,6 +15,9 @@ public class Notie : UIView {
 
     /// The message of the notification. Default to `nil`
     public var message: String?
+    
+    // The keyboard type to use for input
+    public var keyboardType: UIKeyboardType?
 
     /// The style of the notification. `.Confirm` style includes message view and two confirm buttons. `.Input` style adds an extra input text field. Default to `.Confirm`.
     public var style: NotieStyle = .Confirm
@@ -238,6 +241,13 @@ public class Notie : UIView {
         inputField.textAlignment = .Center
         inputField.placeholder = self.placeholder
         inputField.widthAnchor.constraintEqualToAnchor(self.contentView.widthAnchor).active = true
+
+        if self.keyboardType != nil {
+            inputField.keyboardType = self.keyboardType
+
+        }
+        // Make the keyboard show
+        inputField.becomeFirstResponder()
     }
 
     private func configureButtons() {
