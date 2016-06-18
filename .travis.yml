@@ -1,4 +1,4 @@
 language: objective-c
-osx_image: xcode7.1
+osx_image: xcode7.3
 script:
 - xctool test -project Notie.xcodeproj -scheme Notie -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
