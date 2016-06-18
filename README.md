@@ -126,6 +126,8 @@ The following parameters can be modified to customize the appearance of the noti
 - `rightButtonTextColor`: The text color of the right button. Default to white color.
 - `buttonCount`: The button configuration, defaults to `Notie.buttonCount.standard` (two buttons). When the value is set to `Notie.buttonCount.single`, the action defaults to the left button.
 
+- `keyboardType`: The UIKeyboardType to use
+
 ## Functions
 - `getText()` returns a String value of the text when using a `.Input` style
 
