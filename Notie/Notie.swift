@@ -243,7 +243,7 @@ public class Notie : UIView {
         inputField.widthAnchor.constraintEqualToAnchor(self.contentView.widthAnchor).active = true
 
         if self.keyboardType != nil {
-            inputField.keyboardType = self.keyboardType
+            inputField.keyboardType = self.keyboardType!
 
         }
         // Make the keyboard show
