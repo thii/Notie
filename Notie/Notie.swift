@@ -195,7 +195,11 @@ public class Notie : UIView {
             self.configureInputField()
             self.addInputFieldPadding()
         }
-        self.configureButtons()
+        
+        if self.style != .NoButtons {
+           self.configureButtons()
+        }
+        
 
         self.backgroundView.addArrangedSubview(self.contentView)
         self.contentView.widthAnchor.constraintEqualToAnchor(self.backgroundView.widthAnchor).active = true
