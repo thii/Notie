@@ -2,7 +2,7 @@ import UIKit
 
 /// A closure of action to be handled when the user tap one of the buttons.
 @available(iOS 9.0, *)
-public typealias NotieAction = Void -> Void
+public typealias NotieAction = (Void) -> Void
 
 /// Notie is a dropdown notification view that presents above the main view controller.
 @available(iOS 9.0, *)
@@ -20,7 +20,7 @@ public class Notie : UIView {
     public var keyboardType: UIKeyboardType?
 
     /// The style of the notification. `.Confirm` style includes message view and two confirm buttons. `.Input` style adds an extra input text field. Default to `.Confirm`.
-    public var style: NotieStyle = .Confirm
+    public var style: NotieStyle = .confirm
     
     /// A block to call when the user taps on the left button.
     public var leftButtonAction: NotieAction?
@@ -38,31 +38,31 @@ public class Notie : UIView {
     public var placeholder: String?
 
     /// How long the slide down animation should last.
-    public var animationDuration: NSTimeInterval = 0.4
+    public var animationDuration: TimeInterval = 0.4
 
     /// The background color of the message view.
     public var messageBackgroundColor = UIColor(red: 88.0 / 255.0, green: 135.0 / 255.0, blue: 207.0 / 255.0, alpha: 1.0)
 
     /// The text color of the message view. Default to white color.
-    public var messageTextColor = UIColor.whiteColor()
+    public var messageTextColor = UIColor.white
 
     /// The background color of the input text field. Default to white color.
-    public var inputFieldBackgroundColor = UIColor.whiteColor()
+    public var inputFieldBackgroundColor = UIColor.white
 
     /// The text color of the input text field. Default to dark gray.
-    public var inputFieldTextColor = UIColor.darkGrayColor()
+    public var inputFieldTextColor = UIColor.darkGray
 
     /// The background color of the left button.
     public var leftButtonBackgroundColor = UIColor(red: 117.0 / 255.0, green: 183.0 / 255.0, blue: 96.0 / 255.0, alpha: 1.0)
 
     /// The text color of the left button. Default to white color.
-    public var leftButtonTextColor = UIColor.whiteColor()
+    public var leftButtonTextColor = UIColor.white
 
     /// The background color of the right button.
     public var rightButtonBackgroundColor = UIColor(red: 210.0 / 255.0, green: 120.0 / 255.0, blue: 102.0 / 255.0, alpha: 1.0)
 
     /// The text color of the right button. Default to white color.
-    public var rightButtonTextColor = UIColor.whiteColor()
+    public var rightButtonTextColor = UIColor.white
     
     public enum buttons: Int{
         case standard = 2
@@ -101,7 +101,7 @@ public class Notie : UIView {
         self.message = message
         self.style = style
 
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
     }
 
     /// This is required for classes conform to NSCoding protocol. Just don't care about it.
@@ -111,7 +111,7 @@ public class Notie : UIView {
 
 
     public func getText() -> String{
-        if self.style == .Input {
+        if self.style == .input {
             if inputField != nil {
                 return (inputField?.text)!
             }
@@ -127,31 +127,31 @@ public class Notie : UIView {
         self.view.addSubview(self)
         self.backgroundColor = self.messageBackgroundColor
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.widthAnchor.constraintEqualToAnchor(self.view.widthAnchor).active = true
-        self.topConstraint = self.topAnchor.constraintEqualToAnchor(self.view.topAnchor)
-        self.bottomConstraint = self.bottomAnchor.constraintEqualToAnchor(self.view.topAnchor)
-        self.topConstraint?.active = false
-        self.bottomConstraint?.active = true
+        self.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
+        self.topConstraint = self.topAnchor.constraint(equalTo: self.view.topAnchor)
+        self.bottomConstraint = self.bottomAnchor.constraint(equalTo: self.view.topAnchor)
+        self.topConstraint?.isActive = false
+        self.bottomConstraint?.isActive = true
 
         self.configureBackgroundView()
         self.forceUpdates()
 
-        UIView.animateWithDuration(self.animationDuration) { () -> Void in
-            self.bottomConstraint?.active = false
-            self.topConstraint?.active = true
+        UIView.animate(withDuration: self.animationDuration, animations: { () -> Void in
+            self.bottomConstraint?.isActive = false
+            self.topConstraint?.isActive = true
             self.forceUpdates()
-        }
+        })
     }
 
     /// Dismisses the notification.
     public func dismiss() {
-        UIView.animateWithDuration(self.animationDuration, animations: { () -> Void in
-            self.topConstraint?.active = false
-            self.bottomConstraint?.active = true
+        UIView.animate(withDuration: self.animationDuration, animations: { () -> Void in
+            self.topConstraint?.isActive = false
+            self.bottomConstraint?.isActive = true
             self.forceUpdates()
-            }) { (_) -> Void in
+            }, completion: { (_) -> Void in
                 self.removeFromSuperview()
-        }
+        })
     }
 
 
@@ -171,50 +171,50 @@ public class Notie : UIView {
         self.configureStatusBarView()
         self.configureContentView()
         self.addSubview(self.backgroundView)
-        self.backgroundView.topAnchor.constraintEqualToAnchor(self.topAnchor).active = true
-        self.backgroundView.bottomAnchor.constraintEqualToAnchor(self.bottomAnchor).active = true
-        self.backgroundView.leftAnchor.constraintEqualToAnchor(self.leftAnchor).active = true
-        self.backgroundView.rightAnchor.constraintEqualToAnchor(self.rightAnchor).active = true
+        self.backgroundView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        self.backgroundView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        self.backgroundView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        self.backgroundView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         self.backgroundView.translatesAutoresizingMaskIntoConstraints = false
-        self.backgroundView.alignment = .Top
-        self.backgroundView.axis = .Vertical
-        self.backgroundView.distribution = .Fill
+        self.backgroundView.alignment = .top
+        self.backgroundView.axis = .vertical
+        self.backgroundView.distribution = .fill
         self.backgroundView.spacing = 0
     }
 
     private func configureStatusBarView() {
         self.backgroundView.addArrangedSubview(self.statusBarView)
-        self.statusBarView.heightAnchor.constraintEqualToConstant(20).active = true
+        self.statusBarView.heightAnchor.constraint(equalToConstant: 20).isActive = true
     }
 
     private func configureContentView() {
         self.configureMesasgeView()
         self.configureMessageLabelBottomPadding()
-        if self.style == .Input {
+        if self.style == .input {
             self.addInputFieldPadding()
             self.configureInputField()
             self.addInputFieldPadding()
         }
         
-        if self.style != .NoButtons {
+        if self.style != .noButtons {
            self.configureButtons()
         }
         
 
         self.backgroundView.addArrangedSubview(self.contentView)
-        self.contentView.widthAnchor.constraintEqualToAnchor(self.backgroundView.widthAnchor).active = true
+        self.contentView.widthAnchor.constraint(equalTo: self.backgroundView.widthAnchor).isActive = true
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
-        self.contentView.alignment = .Top
-        self.contentView.axis = .Vertical
-        self.contentView.distribution = .Fill
+        self.contentView.alignment = .top
+        self.contentView.axis = .vertical
+        self.contentView.distribution = .fill
         self.contentView.spacing = 0
     }
 
     private func configureMessageLabelBottomPadding() {
         let padding = UIView()
         self.contentView.addArrangedSubview(padding)
-        padding.heightAnchor.constraintEqualToConstant(5).active = true
-        padding.widthAnchor.constraintEqualToAnchor(self.contentView.widthAnchor).active = true
+        padding.heightAnchor.constraint(equalToConstant: 5).isActive = true
+        padding.widthAnchor.constraint(equalTo: self.contentView.widthAnchor).isActive = true
     }
 
     private func configureMesasgeView() {
@@ -223,17 +223,17 @@ public class Notie : UIView {
 
         messageLabel.numberOfLines = 0
         messageLabel.text = self.message
-        messageLabel.textAlignment = .Center
+        messageLabel.textAlignment = .center
         messageLabel.textColor = self.messageTextColor
-        messageLabel.widthAnchor.constraintEqualToAnchor(self.contentView.widthAnchor).active = true
+        messageLabel.widthAnchor.constraint(equalTo: self.contentView.widthAnchor).isActive = true
     }
 
     private func addInputFieldPadding() {
         let padding = UIView()
         self.contentView.addArrangedSubview(padding)
         padding.backgroundColor = self.inputFieldBackgroundColor
-        padding.heightAnchor.constraintEqualToConstant(5).active = true
-        padding.widthAnchor.constraintEqualToAnchor(self.contentView.widthAnchor).active = true
+        padding.heightAnchor.constraint(equalToConstant: 5).isActive = true
+        padding.widthAnchor.constraint(equalTo: self.contentView.widthAnchor).isActive = true
     }
 
     private func configureInputField() {
@@ -242,9 +242,9 @@ public class Notie : UIView {
         self.inputField = inputField
         inputField.backgroundColor = self.inputFieldBackgroundColor
         inputField.textColor = self.inputFieldTextColor
-        inputField.textAlignment = .Center
+        inputField.textAlignment = .center
         inputField.placeholder = self.placeholder
-        inputField.widthAnchor.constraintEqualToAnchor(self.contentView.widthAnchor).active = true
+        inputField.widthAnchor.constraint(equalTo: self.contentView.widthAnchor).isActive = true
 
         if self.keyboardType != nil {
             inputField.keyboardType = self.keyboardType!
@@ -257,26 +257,26 @@ public class Notie : UIView {
     private func configureButtons() {
         let buttonStack = UIStackView()
         self.contentView.addArrangedSubview(buttonStack)
-        buttonStack.widthAnchor.constraintEqualToAnchor(self.contentView.widthAnchor).active = true
+        buttonStack.widthAnchor.constraint(equalTo: self.contentView.widthAnchor).isActive = true
 
-        buttonStack.axis = .Horizontal
-        buttonStack.distribution = .FillEqually
-        buttonStack.alignment = .Center
+        buttonStack.axis = .horizontal
+        buttonStack.distribution = .fillEqually
+        buttonStack.alignment = .center
         buttonStack.spacing = 0
         buttonStack.translatesAutoresizingMaskIntoConstraints = false
 
         let leftButton = UIButton()
         leftButton.backgroundColor = self.leftButtonBackgroundColor
-        leftButton.setTitleColor(self.leftButtonTextColor, forState: .Normal)
-        leftButton.setTitle(self.leftButtonTitle, forState: .Normal)
-        leftButton.addTarget(self, action: #selector(Notie.leftButtonDidTap), forControlEvents: .TouchUpInside)
+        leftButton.setTitleColor(self.leftButtonTextColor, for: UIControlState())
+        leftButton.setTitle(self.leftButtonTitle, for: UIControlState())
+        leftButton.addTarget(self, action: #selector(Notie.leftButtonDidTap), for: .touchUpInside)
         buttonStack.addArrangedSubview(leftButton)
 
         let rightButton = UIButton()
         rightButton.backgroundColor = self.rightButtonBackgroundColor
-        leftButton.setTitleColor(self.rightButtonTextColor, forState: .Normal)
-        rightButton.setTitle(self.rightButtonTitle, forState: .Normal)
-        rightButton.addTarget(self, action: #selector(Notie.rightButtonDidTap), forControlEvents: .TouchUpInside)
+        leftButton.setTitleColor(self.rightButtonTextColor, for: UIControlState())
+        rightButton.setTitle(self.rightButtonTitle, for: UIControlState())
+        rightButton.addTarget(self, action: #selector(Notie.rightButtonDidTap), for: .touchUpInside)
         if self.buttonCount != buttons.single {
              buttonStack.addArrangedSubview(rightButton)
         }

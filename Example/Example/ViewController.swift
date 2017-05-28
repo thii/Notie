@@ -13,8 +13,8 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func showNotie(sender: AnyObject) {
-        let notie = Notie(view: self.view, message: "Are you sure you want to do that?", style: .Confirm)
+    @IBAction func showNotie(_ sender: AnyObject) {
+        let notie = Notie(view: self.view, message: "Are you sure you want to do that?", style: .confirm)
 
 
 
@@ -30,8 +30,8 @@ class ViewController: UIViewController {
         notie.show()
     }
 
-    @IBAction func showInputNotie(sender: AnyObject) {
-        let notie = Notie(view: self.view, message: "Please enter your email address", style: .Input)
+    @IBAction func showInputNotie(_ sender: AnyObject) {
+        let notie = Notie(view: self.view, message: "Please enter your email address", style: .input)
         notie.placeholder = "email@example.com"
         notie.buttonCount = Notie.buttons.standard
         notie.leftButtonAction = {

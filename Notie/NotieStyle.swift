@@ -5,12 +5,12 @@ import UIKit
 public enum NotieStyle : Int {
 
     /// The notification will include a message view and two confirm buttons.
-    case Confirm
+    case confirm
 
     /// The notification will include a message view, an input text field and two confirm buttons.
-    case Input
+    case input
     
     // This will only include a message
-    case NoButtons
+    case noButtons
 
 }
